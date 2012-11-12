@@ -44,7 +44,8 @@ Library
     syb >= 0.1,
     uniplate >= 1.6 && <1.7,
     data-default >= 0.4 && <0.6,
-    QuickCheck >= 2.4.1.1
+    template-haskell >= 2.7,
+    QuickCheck >= 2.5
   ghc-options:
     -fwarn-incomplete-patterns
   Exposed-Modules:
@@ -55,6 +56,7 @@ Library
     Language.ECMAScript3.Syntax
     Language.ECMAScript3.Syntax.Annotations
     Language.ECMAScript3.Syntax.Arbitrary
+    Language.ECMAScript3.Syntax.Quoter
     Language.ECMAScript3.Analysis.Environment
     Language.ECMAScript3.Analysis.LabelSets
   Default-Extensions:
@@ -76,7 +78,7 @@ Test-Suite unittest
     filepath,
     HUnit,
     data-default >=0.4 && <0.6,
-    QuickCheck >= 2.4.1.1
+    QuickCheck >= 2.5
   Default-Extensions: DeriveDataTypeable, ScopedTypeVariables, DeriveFunctor, DeriveFoldable, DeriveTraversable, FlexibleContexts
   Default-Language: Haskell2010
   ghc-options:
@@ -97,7 +99,7 @@ Test-Suite prettytest
     filepath,
     HUnit,
     data-default >=0.4 && <0.5,
-    QuickCheck >= 2.4.1.1,
+    QuickCheck >= 2.5,
     uniplate >= 1.6 && <1.7
   Default-Extensions: DeriveDataTypeable, ScopedTypeVariables, DeriveFunctor, DeriveFoldable, DeriveTraversable, FlexibleContexts
   Default-Language: Haskell2010

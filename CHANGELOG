@@ -1,5 +1,8 @@
 Version change log.
 
+=next=
+A simple ECMAScript quasi-quoter.
+
 =0.10=
 
 The ParenExpr constructor was removed from the Expression AST
