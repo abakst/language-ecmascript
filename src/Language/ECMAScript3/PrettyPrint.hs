@@ -145,6 +145,10 @@ ppStatement s = case s of
     text "function" <+> ppId name <> 
     parens (cat $ punctuate comma (map ppId args)) $$ 
     asBlock body
+  WindAll _ ws ->
+    text "@Wind_All" <+> parens (cat $ punctuate comma $ map pp ws)
+  UnwindAll _ uws ->
+    text "@Unwind_All" <+> parens (cat $ punctuate comma $ map pp uws)
 
 stmtList :: [Statement a] -> Doc
 stmtList = vcat . map ppStatement

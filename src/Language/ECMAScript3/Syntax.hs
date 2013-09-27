@@ -230,6 +230,10 @@ data Statement a
     -- ^ @var x, y=42;@, spec 12.2
   | FunctionStmt a (Id a) {-name-} [Id a] {-args-} [Statement a] {-body-}
     -- ^ @function f(x, y, z) {...}@, spec 13
+  -- AB adding Wind and Unwind, the annotation will contain the
+  -- Locations and Constructors
+  | WindAll a [Expression a]
+  | UnwindAll a [Expression a]
   deriving (Show,Data,Typeable,Eq,Ord,Functor,Foldable,Traversable)  
 
 -- | Returns 'True' if the statement is an /IterationStatement/
