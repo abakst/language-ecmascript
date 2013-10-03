@@ -94,6 +94,7 @@ instance HasAnnotation Statement where
     FunctionStmt a _ _ _ -> a
     WindAll a _          -> a
     UnwindAll a _        -> a
+    RenameLocs a _       -> a
     
 instance HasAnnotation LValue where
   getAnnotation lv = case lv of

@@ -234,6 +234,7 @@ data Statement a
   -- Locations and Constructors
   | WindAll a [Expression a]
   | UnwindAll a [Expression a]
+  | RenameLocs a [Expression a]
   deriving (Show,Data,Typeable,Eq,Ord,Functor,Foldable,Traversable)  
 
 -- | Returns 'True' if the statement is an /IterationStatement/
