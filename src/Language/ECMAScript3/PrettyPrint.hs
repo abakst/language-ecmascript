@@ -151,6 +151,8 @@ ppStatement s = case s of
     text "@Unwind_All" <+> parens (cat $ punctuate comma $ map pp uws)
   RenameLocs _ rs ->
     text "@Rename" <+> parens (cat $ punctuate comma $ map pp rs)
+  DeleteLocs _ rs ->
+    text "@Delete" <+> parens (cat $ punctuate comma $ map pp rs)
   
 
 stmtList :: [Statement a] -> Doc

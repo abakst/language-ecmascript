@@ -47,7 +47,10 @@ instance Default SourcePos where
   def = initialPos ""
 
 data Id a = Id a String 
-          deriving (Show,Eq,Ord,Data,Typeable,Functor,Foldable,Traversable)
+          deriving (Show,Eq,Data,Typeable,Functor,Foldable,Traversable)
+
+instance Eq a => Ord (Id a) where
+  compare (Id _ i1) (Id _ i2) = compare i1 i2
 
 unId :: Id a -> String
 unId (Id _ s) = s
@@ -235,6 +238,7 @@ data Statement a
   | WindAll a [Expression a]
   | UnwindAll a [Expression a]
   | RenameLocs a [Expression a]
+  | DeleteLocs a [Expression a]
   deriving (Show,Data,Typeable,Eq,Ord,Functor,Foldable,Traversable)  
 
 -- | Returns 'True' if the statement is an /IterationStatement/
